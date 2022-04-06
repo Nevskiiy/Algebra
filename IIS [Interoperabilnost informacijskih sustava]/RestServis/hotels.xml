@@ -1,0 +1,13 @@
+﻿<Hotels 
+  xmlns="http://schemas.datacontract.org/2004/07/RestServis.Models" 
+  xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>
+    Bangladesh
+  </Name>
+  <PosName>
+    bn
+  </PosName>
+  <HcomLocale>
+    bn_BN
+  </HcomLocale>
+</Hotels>

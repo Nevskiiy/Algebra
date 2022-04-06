@@ -1,0 +1,26 @@
+<rng:grammar xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" ns="http://schemas.datacontract.org/2004/07/RestServis.Models" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+<rng:start combine="choice">
+<rng:ref name="HotelList"/>
+</rng:start>
+<rng:define name="HotelList">
+<rng:element name="HotelList">
+<rng:element name="HotelDataList">
+<rng:oneOrMore>
+<rng:element name="Hotels">
+<rng:element name="Name">
+<rng:data type="string"/>
+</rng:element>
+<rng:element name="PosName">
+<rng:data type="string"/>
+</rng:element>
+<rng:element name="HcomLocale">
+<rng:data type="string">
+<rng:param name="maxLength">200</rng:param>
+</rng:data>
+</rng:element>
+</rng:element>
+</rng:oneOrMore>
+</rng:element>
+</rng:element>
+</rng:define>
+</rng:grammar>

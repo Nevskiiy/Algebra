@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://schemas.datacontract.org/2004/07/RestService.Models" 
+         xmlns="http://relaxng.org/ns/structure/1.0" 
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="Hotels">
+      <element name="HotelDataList">
+        <element name="HotelData">
+          <element name="Name">
+            <data type="NCName"/>
+          </element>
+          <element name="PosName">
+            <data type="NCName"/>
+          </element>
+          <element name="HcomLocale">
+            <data type="NCName"/>
+          </element>
+        </element>
+      </element>
+    </element>
+  </start>
+</grammar>
