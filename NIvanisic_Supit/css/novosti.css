@@ -1,0 +1,47 @@
+.welcome
+{
+    padding-top: 15px;
+}
+
+.images
+{
+    padding-top: 50px !important;
+    animation: Scale 2.5s;
+}
+
+@keyframes Scale
+{
+    0%{
+        transform: Scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.image-title
+{
+    color: goldenrod;
+    position: relative;
+}
+
+.image-text
+{
+    color: goldenrod;
+}
+
+.footer 
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+
+
+
+

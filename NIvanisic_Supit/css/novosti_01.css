@@ -1,0 +1,16 @@
+@keyframes Down
+{
+    0%{
+        transform: translateY(-30%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+.mainPhoto
+{
+    animation: Down 2s;
+}
+

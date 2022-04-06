@@ -1,0 +1,13 @@
+.form-container
+{
+  margin-top: 50px;
+  width: 800px;
+  height: 620px;
+  background-color: whitesmoke;
+  padding-top: 20px !important;
+}
+
+.form-group i
+{
+  color: skyblue;
+}

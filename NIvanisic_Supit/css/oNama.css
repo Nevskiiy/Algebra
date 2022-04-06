@@ -1,0 +1,202 @@
+.navbar
+{
+    background-color: black !important;
+}
+
+.navbar-brand-logo
+{
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+.navbar-nav .nav-item .nav-link:hover
+{
+    color: #ffcc2f !important;
+}
+
+.navbar-nav i
+{
+    color: #ffcc2f;
+}
+
+.navbar-nav a
+{
+    font-size: 0.8em;
+    color: white !important;
+}
+
+.nav-item
+{
+    padding-right: 10px;
+}
+
+.mainPhoto
+{
+    padding-bottom: 15px;
+    animation: Down 1.5s;
+}
+
+.display-5
+{
+    font-weight: bold;
+}
+
+@keyframes Down
+{
+    0%{
+        transform: translateY(-60%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes Up
+{
+    0%{
+        transform: translateY(40%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+.subwelcome
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: darkred;
+    animation: Up 1.5s;
+}
+
+.jumbotron
+{
+    background-color: #f1f2ec;
+    font-family: 'Dancing Script';
+}
+
+.column_box
+{
+    display: inline-block;
+    border: 1px solid #d8d7d7;
+    height: 45vh;
+    vertical-align: middle;
+    padding: 0.7rem;
+    text-align: justify;
+    border-radius: 2%;
+    margin: .5rem;
+}
+
+.column_box h5
+{
+    font-size: 1em;
+    font-weight: 700;
+    border-bottom: 1px solid #d8d7d7;
+    padding-bottom: 1rem;
+}
+
+.column_box p
+{
+    font-size: 0.7em;
+    font-weight: 50;
+    line-height: 1rem;
+    color: #7c7373;
+}
+
+.sponsors
+{
+    margin: 2rem 5rem;
+}
+
+.sponsors_description
+{
+    height: 20vh;
+    vertical-align: middle;
+    text-align: justify;
+}
+
+.sponsors_description h3
+{
+    font-size: 0.7em;
+    font-weight: 800;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.sponsors_description img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5vh;
+}
+
+.sponsors .history, .sponsors .history i
+{
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.7rem;
+}
+
+.location
+{
+    height: 75vh;
+    background: url("/Materijali/img/opacity.jpg")  center/cover;
+}
+
+
+
+.location_wrap
+{
+    text-align: center;
+}
+
+.location_description
+{
+    display: inline-block;
+    border: 1px solid lightgray;
+    border-radius: 5%;
+    vertical-align: middle;
+    height: 50vh;
+    background-color:white;
+    margin-top: 1rem;
+ 
+}
+
+.location_description p
+{
+    font-size: 0.7em;
+    width: 25vw;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.location_description i
+{
+    color: blue;
+    font-weight: 900;
+}
+
+.location_description h2
+{
+    margin-left: 0.4rem;
+    font-size: 1.2em;
+}
+
+#map_responsive
+{
+    padding-top: 25%;
+    padding-bottom: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    position:relative;
+    height:0;
+}
+
+.page-footer
+{
+    width: 100% !important;
+}
+

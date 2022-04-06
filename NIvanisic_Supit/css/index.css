@@ -1,0 +1,125 @@
+.body   
+{
+    padding-top: 70px;
+}
+
+.navbar
+{
+    background-color: black !important;
+}
+
+.navbar-brand-logo
+{
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+.navbar-nav .nav-item .nav-link:hover
+{
+    color: #ffcc2f !important;
+}
+
+.navbar-nav i
+{
+    color: #ffcc2f;
+}
+
+.navbar-nav a
+{
+    font-size: 0.8em;
+    color: white !important;
+}
+
+.nav-item
+{
+    padding-right: 10px;
+}
+
+.video_section
+{
+    width: 100vw;
+    height: 90vh;
+}
+
+.flex
+{
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    
+    color: white;
+}
+
+.input_tekst
+{
+    width: 100vw;
+    height: 90vh;
+}
+video
+{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+
+}
+.input_
+{
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    color: white;
+}
+.blink
+{
+    animation: blink 0.5s infinite;
+}
+@keyframes blink 
+{to
+    {opacity: .1;}
+}
+
+.header_podnaslov
+{
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 0.1em;
+    display: inline;
+}
+#r1, #r3
+
+{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    font-size: 5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 3px 2px black;
+}
+
+#r2
+{
+    color: rgb(133, 19, 43);
+    font-weight: bold;
+    z-index: 1;
+    font-size: 5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    text-shadow: 3px 2px black;
+}
+
+#r4
+{
+    background-color: white;
+    font-weight: 100;
+    font-size: 5em;
+    padding: 0;
+    font-size: 5em;
+}
+
+
+
+
+
+

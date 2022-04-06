@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/kontakt.css">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/db6177ac79.js"></script>
+    
+    <title>Kontakt</title>
+    <link rel="shortcutIcon" href="data/images/Algebra-logo.png">
+
+  </head>
+
+  <body>
+      
+    <div class="container-fluid p-0 form-container">
+        <form action="http://www.fulek.com/VUA/SUPIT/ContactUs" method="POST" class="needs-validation" style="width: 500px; margin: auto;">
+
+            <div class="form-group form-text">
+                <h3><i class="fas fa-envelope"></i>   Kontaktirajte nas</h3>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Puno ime:</label>
+                <input type="text" name="username" id="username" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="level">Važnost poruke:</label>
+                <select name="level" id="level" style="width: 500px; margin: auto;">
+                    <option value="high">Visoka</option>
+                    <option value="low">Niska</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Vaša poruka:</label>
+                <textarea name="message" id="message" cols="67" rows="6" required></textarea>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" name="" id="newsletter" class="form-check-input">
+                <label for="newsletter" class="form-check-label">Primaj newsletter </label>
+            </div>
+
+            <div class="form-group" style="padding-top: 15px;">
+                <button type="submit" class="btn btn-primary">Pošalji</button>
+                <button type="submit" class="btn btn-danger">Odustani</button>
+            </div>
+        </form>
+    </div>
+    
+    
+
+
+  <script src="/js/kontakt.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+  </body>
+
+</html>
