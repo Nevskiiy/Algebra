@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer invoice view</h2>
+<hr />
+
+@Html.Label(expression: "kupac", labelText: "Customer:")
+@Html.TextBox(
+    name: "kupac",
+    htmlAttributes: new { @class = "form-control" },
+    value: null)
+
+<hr />
+
+<div id="invoiceCustomer">
+    <h3>Customer invoice</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Invoice number</th>
+            <th>Issue date</th>
+            <th>Comment</th>
+        </tr>
+    </table>
+</div>
+
+<p id="info"></p>
+
+@section scripts
+{
+    <script>
+        $("#invoiceCustomer").hide();
+
+        $("#kupac").autocomplete({
+            source: '@Url.Action(
+   actionName: "GetAutoCompleteCustomers",
+   controllerName: "Ajax")',
+            select: function (e, ui) {
+                e.preventDefault();
+                var kupac = {
+                    ime: ui.item.label,
+                    id: ui.item.value
+                };
+                $(this).val(kupac.ime);
+                showCustomerInvoice(kupac.id);
+                $('h3').html(`Customer invoice <a href='@Url.Action(
+                    controllerName: "Customer",
+                    actionName: "Edit")/
+                    ${kupac.id}'>
+                    ${kupac.ime}</a>`)
+            },
+            focus: function (e, ui) {
+                e.preventDefault();
+                $(this).val(ui.item.label);
+            },            
+            minLength: 2
+        });
+
+        function showCustomerInvoice(id)
+        {
+            $.ajax({
+                url: '@Url.Action(controllerName:"Ajax", actionName: "GetInvoiceByCustomer")',
+                data: { id },
+                success: function (racuni)
+                {
+                    if (racuni.length > 0) {
+                        $("#invoiceCustomer").fadeIn(500);
+                        $('p#info').html("");
+
+                        resetTable();
+
+                        $(racuni).each(function (index, racun) {
+                            $('table.table').append(`
+                                                <tr>
+                                                    <td>${racun.IDRacun}</td>
+                                                    <td>${racun.BrojRacuna}</td>
+                                                    <td>${getDateFromJSON(racun.DatumIzdavanja)}</td>
+                                                    <td>${racun.Komentar}</td>
+                                                </tr>`);
+                        })
+                    } else
+                    {
+                        $("#invoiceCustomer").hide();
+                        $('p#info').html("Customer doesn't have invoice.");
+                    }
+                }
+            })
+        }
+
+        function resetTable()
+        {
+            $('table.table tr:not(:first-of-type)').remove();
+        }
+
+        function getDateFromJSON(jsonDate) {
+            var startIndex = jsonDate.indexOf("(") + 1;
+            var endIndex = jsonDate.lastIndexOf(")");
+            var ms = Number(jsonDate.substring(startIndex, endIndex));
+            return new Date(ms).toLocaleDateString();
+        }
+
+    </script>
+}
+

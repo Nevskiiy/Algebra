@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - RWA_NIvanisic</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink(linkText: "Customer", actionName: "CustomerList", controllerName: "Customer")</li>
+                    <li>@Html.ActionLink(linkText: "Invoice", actionName: "Index", controllerName: "Home")</li>
+                    <li>@Html.ActionLink(linkText: "Subcategory", actionName: "Index", controllerName: "Subcategory")</li>
+                    <li>@Html.ActionLink(linkText: "Category", actionName: "Index", controllerName: "Category")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer style="text-align:center">
+            <p>&copy; @DateTime.Now.Year - RWA_Neven Ivanišić</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

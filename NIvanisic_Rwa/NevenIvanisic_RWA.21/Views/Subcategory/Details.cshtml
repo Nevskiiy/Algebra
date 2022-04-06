@@ -1,0 +1,41 @@
+﻿@model Potkategorija
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Potkategorija</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDPotkategorija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDPotkategorija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KategorijaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategorijaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

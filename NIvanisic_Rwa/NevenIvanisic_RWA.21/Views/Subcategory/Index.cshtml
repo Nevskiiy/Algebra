@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Potkategorija>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Subcategory list</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="4">Total number of subcategories: @Model.Count()</th>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDPotkategorija)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KategorijaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDPotkategorija)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategorijaID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naziv)
+                </td>
+                <td>
+                    @Html.ActionLink(
+                   linkText: "Edit",
+                   actionName: "Edit",
+                   htmlAttributes: new
+                   {
+                       @class = "btn btn-primary btn-sm"
+                   },
+                   routeValues: new { id = item.IDPotkategorija })
+
+                    @Html.ActionLink(
+                   linkText: "Details",
+                   actionName: "Details",
+                   htmlAttributes: new
+                   {
+                       @class = "btn btn-info btn-sm"
+                   },
+                   routeValues: new { id = item.IDPotkategorija })
+
+                    @Html.ActionLink(
+                   linkText: "Delete",
+                   actionName: "Delete",
+                   htmlAttributes: new
+                   {
+                       @class = "btn btn-danger btn-sm",
+                       data_id = item.IDPotkategorija,
+                       data_naziv = item.Naziv
+                   },
+                   routeValues: new { id = item.IDPotkategorija })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $('.btn-danger').on('click', function (e)
+        {
+            e.preventDefault();
+            const { naziv, id} = this.dataset;
+
+            if (confirm(`Delete ${naziv}?`))
+            {
+                $.ajax({
+                    url: '@Url.Action(controllerName:"Subcategory", actionName:"Delete")',
+                    data: { id },
+                    statusCode: {
+                        200: function () {
+                            $('.table')
+                                .find(`[data-id=${id}`)
+                                .parents(`tr`)
+                                .hide(500);
+                        },
+                        400: function () {
+                            console.log(`Subcategory is not deleted!`);
+                        }
+                    }
+                })
+                .done(function (data)
+                {
+                    console.log(data);
+                })
+                .fail(function (xhr, txtStatus, error) {
+                    console.log('status', xhr.status, 'statusText', xhr.statusText);
+                    console.log('txtStatus', txtStatus);
+                    console.log('error', error);
+                });
+            }
+        })
+    </script>
+}

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Kupac>
+@{
+    ViewBag.Title = "CustomerList";
+    int index = 0;
+}
+
+@section scripts
+{
+    <script>
+        $('#slider').on('change input', function () {
+            const value = parseInt($(this).val());
+            $('#sliderValue').text(value);
+
+            $('div.customer').each(function (index, customer) {
+                const id = parseInt($(customer).attr('id'));
+                if (id <= value) {
+                    $(customer).show(300);
+                }
+                else $(customer).hide(300);
+            })
+        })
+    </script>
+}
+
+<div class="jumbotron">
+    <header>
+        <h2>Customer list</h2>
+        <input type="range" value="50" min="1" max="50" id="slider"/>
+        <p id="sliderValue">50</p>
+    </header>
+
+
+    <div class="customerContainer">
+        @foreach (var k in Model)
+        {
+            @Html.Partial(
+           partialViewName: "_Customer", 
+           model: k, 
+           viewData: new ViewDataDictionary { { "index", ++index } })
+        }
+    </div>
+</div>
+

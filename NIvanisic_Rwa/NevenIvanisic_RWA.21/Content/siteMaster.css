@@ -1,0 +1,17 @@
+﻿
+
+.navbar {
+    justify-content: flex-start;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+leftButton {
+    text-align: left;
+}
+
+rightButton {
+    text-align: right;
+}

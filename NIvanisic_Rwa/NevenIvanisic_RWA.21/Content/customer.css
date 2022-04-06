@@ -1,0 +1,12 @@
+﻿.customerContainer 
+{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.customer
+{
+    width: 45%;
+    margin: 10px;
+}

@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="NevenIvanisic_RWA._21.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>RWA_NIvanisic</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/siteMaster.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-inverse">
+            <a class="navbar-brand" href="Customer.aspx" style="margin-left: 1rem">Customer</a>
+        </nav>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="panel-footer navbar-fixed-bottom" style="text-align: center"><b>&copy; <%: DateTime.Now.Year %> - RWA_Neven Ivanišić</b></div>
+    </form>
+</body>
+</html>
